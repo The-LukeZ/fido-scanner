@@ -29,6 +29,8 @@ A simple QR code scanner to detect FIDO URIs (`fido://`) when the default camera
 2. Open in Android Studio.
 3. Build and run.
 
+---
+
 It is not planned in the near future to make this app public in the PlayStore - the following things need to happen so I make it a public app:
 
 - Decent app icon (idk where I got the current one from)
