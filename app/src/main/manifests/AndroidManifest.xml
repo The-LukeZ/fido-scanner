@@ -7,7 +7,7 @@
         android:name="android.hardware.camera"
         android:required="true" />
     <uses-permission android:name="android.permission.CAMERA" />
-
+    
     <!-- Internet permission for potential FIDO operations -->
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -21,7 +21,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FIDOScanner"
         tools:targetApi="31">
-
+        
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -30,7 +30,7 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
+            
             <!-- Intent filter for FIDO scheme -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -39,7 +39,7 @@
                 <data android:scheme="fido" />
             </intent-filter>
         </activity>
-
+        
     </application>
 
 </manifest>
