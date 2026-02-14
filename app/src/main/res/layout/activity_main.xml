@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/modern_background"
     android:padding="16dp"
     tools:context=".MainActivity">
 
@@ -25,49 +26,69 @@
         android:layout_height="wrap_content"
         android:text="@string/tap_to_scan"
         android:textSize="18sp"
+        android:textColor="@color/modern_secondary_text"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/scanButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Result Label -->
-    <TextView
-        android:id="@+id/resultLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/result_label"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/resultText"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <!-- Result Text -->
-    <TextView
-        android:id="@+id/resultText"
+    <!-- Result Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/resultCard"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/no_result"
-        android:textSize="14sp"
-        android:padding="12dp"
-        android:background="@android:color/darker_gray"
-        android:textColor="@android:color/white"
         android:layout_marginBottom="16dp"
         android:visibility="gone"
+        app:cardBackgroundColor="@color/modern_card_background"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
         app:layout_constraintBottom_toTopOf="@+id/scanButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Result Label -->
+            <TextView
+                android:id="@+id/resultLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/result_label"
+                android:textColor="@color/modern_primary_text"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- Result Text -->
+            <TextView
+                android:id="@+id/resultText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/modern_code_background"
+                android:padding="12dp"
+                android:text="@string/no_result"
+                android:textColor="@color/modern_secondary_text"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
     <!-- Scan Button -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/scanButton"
+        style="@style/Widget.MaterialComponents.Button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:padding="16dp"
         android:text="@string/scan_button"
         android:textSize="18sp"
-        android:padding="16dp"
+        app:backgroundTint="@color/modern_primary_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

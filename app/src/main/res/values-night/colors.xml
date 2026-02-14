@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Modern UI Colors (Dark) -->
+    <color name="modern_background">#121212</color>
+    <color name="modern_card_background">#1E1E1E</color>
+    <color name="modern_primary_text">#E0E0E0</color>
+    <color name="modern_secondary_text">#A9A9A9</color>
+    <color name="modern_code_background">#2C2C2C</color>
+</resources>

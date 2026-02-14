@@ -74,8 +74,7 @@ class MainActivity : AppCompatActivity() {
             binding.scanButton.text = "Stop Scanning"
             binding.instructionsText.visibility = View.GONE
             binding.previewView.visibility = View.VISIBLE
-            binding.resultLabel.visibility = View.GONE
-            binding.resultText.visibility = View.GONE
+            binding.resultCard.visibility = View.GONE
             startCamera()
         } else {
             requestCameraPermission()
@@ -189,8 +188,7 @@ class MainActivity : AppCompatActivity() {
         stopScanning()
         
         // Show result
-        binding.resultLabel.visibility = View.VISIBLE
-        binding.resultText.visibility = View.VISIBLE
+        binding.resultCard.visibility = View.VISIBLE
         binding.resultText.text = qrCode
 
         // Check if it's a FIDO URI
