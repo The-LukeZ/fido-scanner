@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FIDO Scanner</string>
+    <string name="scan_button">Scan QR Code</string>
+    <string name="result_label">Result:</string>
+    <string name="no_result">No QR code scanned yet</string>
+    <string name="permission_denied">Camera permission is required to scan QR codes</string>
+    <string name="grant_permission">Grant Permission</string>
+    <string name="fido_detected">FIDO URI Detected!</string>
+    <string name="fido_handling">Handling FIDO authentication…</string>
+    <string name="scanning">Scanning for QR codes…</string>
+    <string name="tap_to_scan">Tap the button below to scan a QR code</string>
+</resources>
