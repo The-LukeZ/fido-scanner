@@ -17,14 +17,15 @@ FIDO Scanner is a minimal yet powerful Android application that scans QR codes t
 
 ## Requirements
 
-- Android 14 (API level 34) or higher
+- Android 8.0 (API level 26) or higher
+- Recommended: Android 14+ for best compatibility
 - Camera permission
 - Internet permission (for FIDO operations)
 
 ## Technology Stack
 
 - **Language**: Kotlin
-- **Minimum SDK**: 34 (Android 14)
+- **Minimum SDK**: 26 (Android 8.0)
 - **Target SDK**: 34
 - **Dependencies**:
   - AndroidX Core KTX
@@ -39,7 +40,7 @@ FIDO Scanner is a minimal yet powerful Android application that scans QR codes t
 
 - Android Studio Hedgehog (2023.1.1) or newer
 - JDK 8 or higher
-- Android SDK with API level 34
+- Android SDK with API level 26 or higher
 
 ### Build Steps
 
@@ -164,7 +165,7 @@ fido://webauthn?challenge=xyz&origin=https://example.com
 
 ## HyperOS Compatibility
 
-The app is tested and compatible with Xiaomi's HyperOS, which is based on Android 14. All features work as expected on HyperOS devices.
+The app is compatible with Xiaomi's HyperOS and other Android 8.0+ devices. Tested on Android 14 with full feature support.
 
 ## Development
 

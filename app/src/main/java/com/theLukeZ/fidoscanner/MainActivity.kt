@@ -215,7 +215,15 @@ class MainActivity : AppCompatActivity() {
                     
                     // Check if there's an app to handle this
                     val packageManager = packageManager
-                    val activities = packageManager.queryIntentActivities(intent, 0)
+                    val activities = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
+                        packageManager.queryIntentActivities(
+                            intent,
+                            android.content.pm.PackageManager.ResolveInfoFlags.of(0)
+                        )
+                    } else {
+                        @Suppress("DEPRECATION")
+                        packageManager.queryIntentActivities(intent, 0)
+                    }
                     
                     if (activities.size > 1) {
                         // Multiple apps can handle this, let user choose
@@ -266,8 +274,8 @@ class MainActivity : AppCompatActivity() {
         override fun analyze(imageProxy: ImageProxy) {
             val currentTimestamp = System.currentTimeMillis()
             
-            // Analyze at most once per second to avoid excessive processing
-            if (currentTimestamp - lastAnalyzedTimestamp >= 1000) {
+            // Analyze at most once per 500ms for better responsiveness
+            if (currentTimestamp - lastAnalyzedTimestamp >= 500) {
                 val mediaImage = imageProxy.image
                 if (mediaImage != null) {
                     val image = InputImage.fromMediaImage(
@@ -277,7 +285,9 @@ class MainActivity : AppCompatActivity() {
 
                     scanner.process(image)
                         .addOnSuccessListener { barcodes ->
-                            for (barcode in barcodes) {
+                            // Process only the first detected barcode to avoid multiple callbacks
+                            if (barcodes.isNotEmpty()) {
+                                val barcode = barcodes.first()
                                 when (barcode.valueType) {
                                     Barcode.TYPE_TEXT,
                                     Barcode.TYPE_URL -> {
