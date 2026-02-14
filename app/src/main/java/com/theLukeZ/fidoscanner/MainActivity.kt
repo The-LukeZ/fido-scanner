@@ -20,6 +20,7 @@ import com.google.mlkit.vision.common.InputImage
 import com.theLukeZ.fidoscanner.databinding.ActivityMainBinding
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
+import androidx.core.net.toUri
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -138,7 +139,7 @@ class MainActivity : AppCompatActivity() {
             val preview = Preview.Builder()
                 .build()
                 .also {
-                    it.setSurfaceProvider(binding.previewView.surfaceProvider)
+                    it.surfaceProvider = binding.previewView.surfaceProvider
                 }
 
             // Image analyzer for QR code scanning
@@ -207,7 +208,7 @@ class MainActivity : AppCompatActivity() {
             .setPositiveButton("Open") { _, _ ->
                 // Try to open the FIDO URI with the system
                 try {
-                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(uri))
+                    val intent = Intent(Intent.ACTION_VIEW, uri.toUri())
                     // Remove this app from the options to prevent infinite loop
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     
