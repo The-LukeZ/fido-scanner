@@ -31,8 +31,9 @@ A simple QR code scanner to detect FIDO URIs (`fido://`) when the default camera
 
 ---
 
-It is not planned in the near future to make this app public in the PlayStore - the following things need to happen so I make it a public app:
+It is not planned in the near future to make this app public - the following things need to happen so I make it a public app:
 
 - Decent app icon (idk where I got the current one from)
 - upgrade `targetSdk` version to latest version
-- Find out how to publish to Google Play Store
+
+It won't be added to the Play Store as of 2026, because Google can go eat dirt with their developer verification process.
