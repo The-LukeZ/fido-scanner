@@ -6,6 +6,12 @@ An Android app to scan FIDO URI QR codes for cross-device passkey authentication
 
 A simple QR code scanner to detect FIDO URIs (`fido://`) when the default camera app does not.
 
+For example, you have a passkey cofigured for Github on your phone and you want to login on your PC,
+your browser typically shows you a QR code to scan with your phone which _should_ open your password manager
+so you can do the passkey challenge on your phone.
+
+However for some reason, a phone's camera might not open the passowrd manager. This app helps you do just that.
+
 ## Features
 
 - Scans QR codes using ML Kit and CameraX.
